@@ -1,7 +1,17 @@
+/**
+  * Dimensions
+  * Dimension, Valeur max
+**/
+
 max(dim1, 4).
 max(dim2, 5).
 max(dim3, 8).
 max(dim4, 5).
+
+/**
+  * Diagrammes
+  * Nom du diagramme, Dimension, Valeur
+**/
 
 value(diag1, dim1, 4).
 value(diag1, dim2, 1).
