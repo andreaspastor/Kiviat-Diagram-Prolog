@@ -1,6 +1,6 @@
 /**
   * Dimensions
-  * Dimension, Valeur max
+  * Dimension, Valeur Max de la dimension
 **/
 
 max(dim1, 4).
@@ -27,3 +27,8 @@ value(diag3, dim1, 3).
 value(diag3, dim2, 2).
 value(diag3, dim3, 3).
 value(diag3, dim4, 5).
+
+value(diag4, dim1, 1).
+value(diag4, dim2, 1).
+value(diag4, dim3, 1).
+value(diag4, dim4, 1).
