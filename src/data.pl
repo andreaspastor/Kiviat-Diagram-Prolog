@@ -10,6 +10,13 @@ max(dim4, 5).
 max(dim5, 12).
 max(dim6, 2).
 
+indexes(dim1, 1).
+indexes(dim2, 2).
+indexes(dim3, 3).
+indexes(dim4, 4).
+indexes(dim5, 5).
+indexes(dim6, 6).
+
 /**
   * Diagrammes
   * Nom du diagramme, Dimension, Valeur

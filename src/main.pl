@@ -11,7 +11,7 @@ main :-
   % findall(X, permutation(ListeDim, X), S),
   
   % Calcul des permutations et des aires
-  findall((S, X), ( permutation(ListeDim, Y) , append(Y, [dim1], X),
+  findall((S, X), ( permutation(ListeDim, Y), append([dim1], Y, X), [_,I2|_] = X, reverse(X,RX), [In|_] = RX, indexes(I2, E2), indexes(In,En), E2 < En,
     findall(AireValue, ( member(Diag, ListeDiag), aire(Diag, X, AireValue) ), S)
   ), Areas),
 
