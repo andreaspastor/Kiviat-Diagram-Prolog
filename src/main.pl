@@ -6,11 +6,12 @@
 :- initialization main.
 main :-
   % Données
-  ListeDim = [dim1, dim2, dim3, dim4],
+  ListeDim = [dim2, dim3, dim4],
   ListeDiag = [diag1, diag2, diag3, diag4],
-
+  % findall(X, permutation(ListeDim, X), S),
+  
   % Calcul des permutations et des aires
-  findall((S, X), ( permutation(ListeDim, X) ,
+  findall((S, X), ( permutation(ListeDim, Y) , append(Y, [dim1], X),
     findall(AireValue, ( member(Diag, ListeDiag), aire(Diag, X, AireValue) ), S)
   ), Areas),
 
