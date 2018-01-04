@@ -6,7 +6,7 @@
 :- initialization main.
 main :-
   % Données
-  ListeDim = [dim2, dim3, dim4],
+  ListeDim = [dim2, dim3, dim4, dim5, dim6],
   ListeDiag = [diag1, diag2, diag3, diag4],
   % findall(X, permutation(ListeDim, X), S),
   
