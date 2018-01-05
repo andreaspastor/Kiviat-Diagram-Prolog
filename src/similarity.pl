@@ -1,3 +1,11 @@
+/**
+  * square_similarity(Diag1, Diag2, Perm, Ret)
+  * Calcule la différence carré  entre deux diagrammes
+  * @arg Diag1, Diag2   Deux diagrammes dont on veut calculer la différence
+  * @arg Perm           Permutation des dimensions des diagrammes
+  * @arg Ret            Valeur de la similarité
+**/
+
 square_similarity(Diag1, Diag2, Perm, Ret) :-
   square_similarity(Diag1, Diag2, Perm, 0, Ret).
 
@@ -10,6 +18,14 @@ square_similarity(Diag1, Diag2, [Dim | Perm], Temp, Ret) :-
   square_similarity(Diag1, Diag2, Perm, Temp1, Ret).
 
 
+  /**
+    * sq_sim_list(ListeDiags, Perm, Ret)
+    * Calcule la somme des différences carré pour une permutation d'une grille de diagramme
+    * @arg ListeDiags     Liste de diagramme
+    * @arg Perm           Permutation des dimensions de ces diagrammes
+    * @arg Ret            Valeur de la somme des différence carrés
+  **/
+
 sq_sim_list(ListeDiags, Perm, Ret) :-
   sq_sim_list(ListeDiags, Perm, 0, Ret).
 
@@ -17,8 +33,15 @@ sq_sim_list([_ | []], _, Temp, Temp).
 
 sq_sim_list([D1, D2 | ListeDiags], Perm, Temp, Ret) :-
   square_similarity(D1, D2, Perm, V),
-  Temp1 is Temp + V,
-  sq_sim_list([D2 | ListeDiags], Perm, Temp1, Ret).
+  sq_sim_list([D2 | ListeDiags], Perm, Temp+V, Ret).
+
+
+  /**
+    * find_best_grid(ListeGrid, Grid)
+    * Recherche la grille ou la différence entre deux diagrammes voisins est minimale
+    * @arg ListeGrid      Liste des permutations de grilles différentes
+    * @arg Grid           Grille donnant le résultat voulu
+  **/
 
 find_best_grid(ListeGrid, Grid) :-
   find_best_grid(ListeGrid, 1000000, _, Grid).

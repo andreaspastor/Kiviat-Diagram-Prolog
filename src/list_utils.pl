@@ -9,31 +9,29 @@ sum_list(L, S) :-
   sum_list(L, 0, S).
 
 sum_list([X | L], Temp, S) :-
-  Temp1 is Temp + X,
-  sum_list(L, Temp1, S).
+  sum_list(L, Temp+X, S).
 
-sum_list([X | []], Temp, S) :-
-  S=Temp+X.
+sum_list([X | []], Temp, Temp+X).
 
   /**
-    * find_min_sum(L, Max, Perm)
-    * Recherche la liste où la somme des éléments et la plus faible
+    * find_max_sum(L, Max, Perm)
+    * Recherche la liste où la somme des éléments est maximale
     * @arg L      Liste d'élements (nombres)
     * @arg Max    Somme des élements de la liste
-    * @arg Perm   Permutation donnant l'aire minimale
+    * @arg Perm   Permutation donnant l'aire maximale
   **/
 
-find_min_sum(L, Max, Perm) :-
-  find_min_sum(L, 1000000, Max, _, Perm).
+find_max_sum(L, Max, Perm) :-
+  find_max_sum(L, -1, Max, _, Perm).
 
-find_min_sum([(Areas, Perm) | L], Temp, MaxFinal, _, PermFinal) :-
-  sum_list(Areas, S),
-  S < Temp,
-  find_min_sum(L, S, MaxFinal, Perm, PermFinal).
-
-find_min_sum([(Areas, _) | L], Temp, MaxFinal, PermTemp, PermFinal) :-
+find_max_sum([(Areas, Perm) | L], Temp, MaxFinal, _, PermFinal) :-
   sum_list(Areas, S),
   S >= Temp,
-  find_min_sum(L, Temp, MaxFinal, PermTemp, PermFinal).
+  find_max_sum(L, S, MaxFinal, Perm, PermFinal).
 
-find_min_sum([], Temp, Temp, Perm, Perm).
+find_max_sum([(Areas, _) | L], Temp, MaxFinal, PermTemp, PermFinal) :-
+  sum_list(Areas, S),
+  S < Temp,
+  find_max_sum(L, Temp, MaxFinal, PermTemp, PermFinal).
+
+find_max_sum([], Temp, Temp, Perm, Perm).
