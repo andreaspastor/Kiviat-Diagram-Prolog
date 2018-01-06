@@ -10,6 +10,11 @@ max(dim4, 5).
 max(dim5, 12).
 max(dim6, 2).
 
+/**
+  * Index des axes correspondants
+  * Dimension, Index
+**/
+
 indexes(dim1, 1).
 indexes(dim2, 2).
 indexes(dim3, 3).
