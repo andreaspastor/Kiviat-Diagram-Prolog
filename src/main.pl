@@ -18,22 +18,22 @@ bf2b482	Antonin Arquey	Thu Dec 7 14:24:32 2017 +0100	Création de la fonction de
 :- initialization main.
 main :-
   % Données
-  ListeDim = [dim2, dim3, dim4, dim5, dim6],
+  ListeDim = [dim2, dim3, dim4, dim5, dim6, dim7, dim8, dim9], % Ne pas mettre la premiere dimension !
   ListeDiag = [diag1, diag2, diag3, diag4],
-  % findall(X, permutation(ListeDim, X), S),
 
   % Calcul des permutations et des aires
   findall((S, X), ( permutation(ListeDim, Y), append([dim1], Y, X), [_,I2|_] = X, reverse(X,RX), [In|_] = RX, indexes(I2, E2), indexes(In,En), E2 < En,
     findall(AireValue, ( member(Diag, ListeDiag), aire(Diag, X, AireValue) ), S)
   ), Areas),
-  % Recherche de la meilleure permutation
+
+  % Recherche de la meilleure permutation maximisant l'aire
   find_max_sum(Areas, MaxAire, MaxPerm),
   format("Permutation donnant une aire maximale ~3f pour les diagrammes : ", MaxAire),
   writeln(MaxPerm),
 
   % Calcul des permutations et des similarités
   findall(D, permutation(ListeDiag, D), PermDiags),
-  findall((Pdiag, Val), ( member(Pdiag, PermDiags), sq_sim_list(Pdiag, MaxPerm, Val) ), ListeGrid),
+  findall((Pdiag, Val), ( member(Pdiag, PermDiags), sq_diff_list(Pdiag, MaxPerm, Val) ), ListeGrid),
 
   % Recherche du meilleur alignement
   find_best_grid(ListeGrid, BestGrid),

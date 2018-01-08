@@ -16,6 +16,8 @@ cd403ca	Antonin Arquey	Fri Jan 5 15:42:55 2018 +0100	Correction de bug calcul de
 sum_list(L, S) :-
   sum_list(L, 0, S).
 
+sum_list([], 0).
+
 sum_list([X | L], Temp, S) :-
   sum_list(L, Temp+X, S).
 

@@ -16,6 +16,8 @@ bf2b482	Antonin Arquey	Thu Dec 7 14:24:32 2017 +0100	Création de la fonction de
 aire(Diag, Perm, S) :-
   aire(Diag, Perm, 0, S).
 
+aire(_, [], 0).
+
 aire(Diag, [Dim1, Dim2 | Perm], Temp, S, FirstDim) :-
   max(Dim1, MD1),
   max(Dim2, MD2),

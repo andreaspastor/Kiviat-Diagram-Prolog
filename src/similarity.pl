@@ -4,41 +4,41 @@ a9bd086	Antonin Arquey	Sun Dec 24 16:47:41 2017 +0100	Calcul du meilleur alignem
 */
 
 /**
-  * square_similarity(Diag1, Diag2, Perm, Ret)
+  * square_difference(Diag1, Diag2, Perm, Ret)
   * Calcule la différence carré  entre deux diagrammes
   * @arg Diag1, Diag2   Deux diagrammes dont on veut calculer la différence
   * @arg Perm           Permutation des dimensions des diagrammes
   * @arg Ret            Valeur de la similarité
 **/
 
-square_similarity(Diag1, Diag2, Perm, Ret) :-
-  square_similarity(Diag1, Diag2, Perm, 0, Ret).
+square_difference(Diag1, Diag2, Perm, Ret) :-
+  square_difference(Diag1, Diag2, Perm, 0, Ret).
 
-square_similarity(_, _, [], Temp, Temp).
+square_difference(_, _, [], Temp, Temp).
 
-square_similarity(Diag1, Diag2, [Dim | Perm], Temp, Ret) :-
+square_difference(Diag1, Diag2, [Dim | Perm], Temp, Ret) :-
   value(Diag1, Dim, V1),
   value(Diag2, Dim, V2),
   Temp1 is Temp + (V1-V2) * (V1-V2),
-  square_similarity(Diag1, Diag2, Perm, Temp1, Ret).
+  square_difference(Diag1, Diag2, Perm, Temp1, Ret).
 
 
   /**
-    * sq_sim_list(ListeDiags, Perm, Ret)
+    * sq_diff_list(ListeDiags, Perm, Ret)
     * Calcule la somme des différences carré pour une permutation d'une grille de diagramme
     * @arg ListeDiags     Liste de diagramme
     * @arg Perm           Permutation des dimensions de ces diagrammes
     * @arg Ret            Valeur de la somme des différence carrés
   **/
 
-sq_sim_list(ListeDiags, Perm, Ret) :-
-  sq_sim_list(ListeDiags, Perm, 0, Ret).
+sq_diff_list(ListeDiags, Perm, Ret) :-
+  sq_diff_list(ListeDiags, Perm, 0, Ret).
 
-sq_sim_list([_ | []], _, Temp, Temp).
+sq_diff_list([_ | []], _, Temp, Temp).
 
-sq_sim_list([D1, D2 | ListeDiags], Perm, Temp, Ret) :-
-  square_similarity(D1, D2, Perm, V),
-  sq_sim_list([D2 | ListeDiags], Perm, Temp+V, Ret).
+sq_diff_list([D1, D2 | ListeDiags], Perm, Temp, Ret) :-
+  square_difference(D1, D2, Perm, V),
+  sq_diff_list([D2 | ListeDiags], Perm, Temp+V, Ret).
 
 
   /**
