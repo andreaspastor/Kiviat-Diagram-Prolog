@@ -1,3 +1,11 @@
+/* LOG HISTORY
+cd403ca	Antonin Arquey	Fri Jan 5 15:42:55 2018 +0100	Correction de bug calcul de somme des aires + ajout de commentaires
+8875add	Antonin Arquey	Thu Dec 14 15:32:07 2017 +0100	Ajout de commentaires
+4de5943	Antonin Arquey	Thu Dec 14 15:02:15 2017 +0100	Reccherche de la permutation minimisant l'aire des diagrammes
+6c1b604	Antonin Arquey	Wed Dec 13 16:05:52 2017 +0100	Ajout de predicat stockant les données et calculs des aires pour chaque permutations des diagrammes
+98ff045	Antonin Arquey	Fri Dec 8 11:36:08 2017 +0100	Ajout de fonctions sur les listes et fonction trouvant la meilleur permutation pour un diagramme
+*/
+
 /**
   * sum_list(L,S)
   * Calcule la somme des élements d'une liste

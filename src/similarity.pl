@@ -1,3 +1,8 @@
+/* LOG HISTORY
+cd403ca	Antonin Arquey	Fri Jan 5 15:42:55 2018 +0100	Correction de bug calcul de somme des aires + ajout de commentaires
+a9bd086	Antonin Arquey	Sun Dec 24 16:47:41 2017 +0100	Calcul du meilleur alignement de diagrammes pour maximiser leur similarités
+*/
+
 /**
   * square_similarity(Diag1, Diag2, Perm, Ret)
   * Calcule la différence carré  entre deux diagrammes

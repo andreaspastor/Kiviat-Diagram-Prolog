@@ -1,3 +1,15 @@
+/* LOG HISTORY
+cd403ca	Antonin Arquey	Fri Jan 5 15:42:55 2018 +0100	Correction de bug calcul de somme des aires + ajout de commentaires
+5af2965	Andréas PASTOR	Thu Jan 4 19:52:32 2018 +0100	add clockwise/anticlokwise symmetry management
+eb07473	Andréas PASTOR	Thu Jan 4 17:48:06 2018 +0100	add axes
+d4a67fd	Andréas PASTOR	Thu Jan 4 17:33:11 2018 +0100	add cycle reduction
+a9bd086	Antonin Arquey	Sun Dec 24 16:47:41 2017 +0100	Calcul du meilleur alignement de diagrammes pour maximiser leur similarités
+4de5943	Antonin Arquey	Thu Dec 14 15:02:15 2017 +0100	Reccherche de la permutation minimisant l'aire des diagrammes
+6c1b604	Antonin Arquey	Wed Dec 13 16:05:52 2017 +0100	Ajout de predicat stockant les données et calculs des aires pour chaque permutations des diagrammes
+98ff045	Antonin Arquey	Fri Dec 8 11:36:08 2017 +0100	Ajout de fonctions sur les listes et fonction trouvant la meilleur permutation pour un diagramme
+bf2b482	Antonin Arquey	Thu Dec 7 14:24:32 2017 +0100	Création de la fonction de calcul d'aire d'un diagramme
+*/
+
 :- include('./aire.pl').
 :- include('./list_utils.pl').
 :- include('./data.pl').
